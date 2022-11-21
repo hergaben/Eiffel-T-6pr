@@ -18,12 +18,12 @@ feature {NONE} -- Initialization
 		require
 			a_id > 0
 		local
-			l_time: TIME
-  		l_seed: INTEGER
+			l_time: INTEGER
+  			l_seed: INTEGER
 		do
 			id := a_id
-			create l_time.make_now
-      l_seed := l_time.milli_second
+			create l_time
+      l_seed := l_time
       create rnd.set_seed (l_seed)
 		ensure
 			id = a_id
